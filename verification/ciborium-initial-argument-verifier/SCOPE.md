@@ -1,0 +1,24 @@
+# Scope
+
+- production anchor
+  - `ciborium` 0.2.2 ordinary `de::from_reader` path
+  - `ciborium-ll` 0.2.2 `Decoder::pull` initial-byte and numeric-argument transition
+- included
+  - three-bit major-type extraction for ordinary non-tag major types `0..=5`
+  - five-bit additional-information extraction
+  - direct arguments `0..=23`
+  - big-endian `1`, `2`, `4`, and `8` byte arguments selected by additional values `24..=27`
+  - exact byte consumption and truncation rejection
+  - reserved additional values `28..=30` across every major-type prefix
+  - a small production-bound host differential check
+  - an executable Verus model of the same bounded transition
+- excluded
+  - additional value `31`, indefinite forms, break processing, and other unsupported forms
+  - semantic tag handling, floats, full values, recursive arrays or maps, strings, and serde visitors
+  - canonical or preferred serialization policy
+  - downstream application behavior
+  - unrelated code or dependencies
+  - publication, contact, forks, commits, pushes, issues, pull requests, review, and evaluation
+- claim limit
+  - the result concerns only the frozen initial-byte and definite numeric-argument transition
+  - sampled host agreement is binding evidence, not a universal proof of production equivalence

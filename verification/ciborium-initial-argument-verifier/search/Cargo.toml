@@ -1,0 +1,9 @@
+[package]
+name = "ciborium-initial-argument-search"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[dependencies]
+ciborium = { path = "../checkout/ciborium" }
+ciborium-ll = { path = "../checkout/ciborium-ll" }
